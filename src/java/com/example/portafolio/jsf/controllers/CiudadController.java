@@ -69,7 +69,7 @@ public class CiudadController implements Serializable {
     
     public void create(){
         try {
-            selectedCiudad.setIdDepartamento(new Departamento(idDepartamento));
+            selectedCiudad.setDepartamento(new Departamento(idDepartamento));
             getCiudadSession().create(selectedCiudad);
         } catch (Exception ex) {
              System.err.println(ex.getMessage());

@@ -55,7 +55,7 @@ public class DepartamentoController implements Serializable {
     
     public void create () {
         try {
-            selectedDepartamento.setIdPais(new Pais(idPais));
+            selectedDepartamento.setPais(new Pais(idPais));
             getDepartamentoSession().create(selectedDepartamento);
         } catch (Exception ex) {
             System.err.println(ex.getMessage());

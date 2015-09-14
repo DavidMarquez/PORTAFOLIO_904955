@@ -25,7 +25,7 @@ public class TipoServicio implements Serializable {
 
     private String nombre;
     
-    @OneToMany(mappedBy = "idTipoServicio")
+    @OneToMany(mappedBy = "tipoServicio")
     private List<Servicio> servicios;
 
     public TipoServicio() {

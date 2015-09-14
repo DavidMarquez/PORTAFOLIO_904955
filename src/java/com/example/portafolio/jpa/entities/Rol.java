@@ -22,17 +22,17 @@ public class Rol implements Serializable {
 
     @Column(name = "nombre_rol")
     private String nombreRol;
-
-    @OneToMany(mappedBy = "idRol")
-    private List<Usuario> usuarios;
     
+    @OneToMany(mappedBy = "rol")
+    private List<Usuario> usuarios;
+
     public Rol() {
     }
 
     public Rol(String idRol) {
         this.idRol = idRol;
     }
-
+    
     public String getIdRol() {
         return idRol;
     }

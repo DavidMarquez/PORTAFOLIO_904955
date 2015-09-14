@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.example.portafolio.jpa.entities;
 
 import java.io.Serializable;
@@ -7,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -15,15 +21,16 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "PAISES") //Tabla base de datos (Tener en cuenta Mayúsculas y Minúsculas
 public class Pais implements Serializable {
-
+    
     @Id //Clave Primaria
-    @Column(name = "id_pais") //nombre de la columna en la base de datos
+    @Column (name = "id_pais") //nombre de la columna en la base de datos
     private String idPais;
-
-    @Column(name = "nombre_pais")
+    
+    @Column (name = "nombre_pais")
+    @Size(max = 60)
     private String nombrePais;
-
-    @OneToMany(mappedBy = "idPais")
+    
+    @OneToMany(mappedBy = "pais")
     private List<Departamento> departamentos;
 
     public Pais() {
@@ -56,5 +63,5 @@ public class Pais implements Serializable {
     public void setDepartamentos(List<Departamento> departamentos) {
         this.departamentos = departamentos;
     }
-
-}
+    
+}//Fin clase Pais
